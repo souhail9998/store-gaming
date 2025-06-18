@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 Gaming Store</h1>
+    <nav>
+      <button id="admin-login-toggle">Connexion Admin</button>
+
+      <input type="text" id="search" placeholder="Rechercher..." />
+      <button id="toggle-theme">🌓</button>
+      <button id="auth-toggle">Connexion</button>
+      <span id="user-info"></span>
+      <a href="#cart">Panier (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="auth-section" class="hidden">
+      <h2>Connexion / Inscription</h2>
+      <input type="text" id="auth-username" placeholder="Nom d'utilisateur" />
+      <input type="password" id="auth-password" placeholder="Mot de passe" />
+      <button id="login-btn">Connexion</button>
+      <button id="register-btn">Inscription</button>
+    </section>
+   
+    <section id="admin-section" class="hidden">
+      <h2>Admin - Gestion des Produits</h2>
+      <button id="admin-logout">Déconnexion Admin</button>
+
+      <h3>Ajouter un produit</h3>
+      <input type="text" id="admin-product-name" placeholder="Nom du produit" />
+      <input type="number" id="admin-product-price" placeholder="Prix (€)" min="0" step="0.01" />
+      <input type="text" id="admin-product-image" placeholder="URL de l'image" />
+      <button id="admin-add-product">Ajouter</button>
+
+      <h3>Liste des produits</h3>
+      <ul id="admin-product-list"></ul>
+    </section>
+
+
+    <section id="products">
+      <h2>Produits</h2>
+      
+      <div class="product-list" id="product-list"></div>
+    </section>
+
+    <section id="cart">
+      <h2>Panier</h2>
+      <ul id="cart-items"><li>Panier vide.</li></ul>
+      <p id="total-price"></p>
+      <button id="checkout" disabled>Commander</button>
+    </section>
+    <section id="order-history" class="hidden">
+      <h2>Historique des commandes</h2>
+      <ul id="order-list">
+        <li>Aucune commande.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Gaming Store</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
